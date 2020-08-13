@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LabelHeight48.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="TextValue">This is a reasonable long bit of text to force wrapping is this humble example. Although not too long as to be a TLDR situation, unless of course, you have a below than average attention span. Thank you for your time!</x:String>
+            <x:String x:Key="ProfileUrl">https://intl.startrek.com/sites/default/files/styles/content_full/public/images/2019-07/ae5e3ce40e0404a45ecacaaf05e5f735.jpg?itok=avkMQeu-</x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Grid ColumnDefinitions="0.75*,0.25*" RowDefinitions="Auto,*">
+                <Label Text="Picard" />
+                <Frame
+                    Grid.Row="1"
+                    Margin="4"
+                    Padding="2"
+                    BackgroundColor="AliceBlue"
+                    CornerRadius="4">
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Frame
+                            Margin="0"
+                            Padding="0"
+                            CornerRadius="18"
+                            VerticalOptions="Center">
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="36"
+                                Source="{StaticResource ProfileUrl}"
+                                WidthRequest="36" />
+                        </Frame>
+                        <Label
+                            Grid.Column="1"
+                            Text="{StaticResource TextValue}"
+                            TextColor="Black" />
+                    </Grid>
+                </Frame>
+            </Grid>
+            <Grid ColumnDefinitions="0.25*,0.75*" RowDefinitions="Auto,Auto">
+                <Label
+                    Grid.Column="1"
+                    HorizontalOptions="End"
+                    Text="You" />
+                <Frame
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="4"
+                    Padding="2"
+                    BackgroundColor="PaleGreen"
+                    CornerRadius="4"
+                    HorizontalOptions="End">
+                    <Label Text="{StaticResource TextValue}" TextColor="Black" />
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
